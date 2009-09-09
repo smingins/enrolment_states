@@ -1,0 +1,46 @@
+<p>
+  <b>Name:</b>
+  <%=h @student.name %>
+</p>
+
+<p>
+  <b>Dob:</b>
+  <%=h @student.dob %>
+</p>
+
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Defer', defer_enrolment_path(@student.current_enrolment) %> |
+<%= link_to 'Back', students_path %>
+<hr/>
+<h3>Enrolments</h3>
+<table>
+  <tr>
+    <th>Start Date</th>
+    <th>Status</th>
+  </tr>
+  <% @student.enrolments.each do |enrolment| %>
+  <tr>
+    <td><%= enrolment.start_date %></td>
+    <td><%= enrolment.current_state %></td>
+  </tr>
+  <% end %>
+</table>
+<hr/>
+<h3>Enrolment Status History</h3>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Effective from</th>
+    <th>Approved</th>
+  </tr>
+  <% @student.status_changes.each do |change| %>
+  <tr>
+    <td><%= change.created_at %></td>
+    <td><%= change.state.name %></td>
+    <td><%= change.effective_date %></td>
+    <td><%= change.approved_date %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,12 @@
+<h1>Editing student</h1>
+
+<% form_for setup_student(@student) do |f| %>
+<%= render :partial => 'form', :locals => {:f => f} %>
+  <p>
+    <%= f.submit 'Update' %>
+    <%= f.submit 'Save and Enrol' if @student.can_enrol? %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @student %> |
+<%= link_to 'Back', students_path %>

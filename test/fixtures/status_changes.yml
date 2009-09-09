@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  effective_date: 2009-09-09
+  approved_date: 2009-09-09
+  state: 1
+
+two:
+  effective_date: 2009-09-09
+  approved_date: 2009-09-09
+  state: 1

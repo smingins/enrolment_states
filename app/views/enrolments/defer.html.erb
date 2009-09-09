@@ -1,0 +1,22 @@
+<h1>Defer enrolment</h1>
+
+<% form_for @enrolment do |f| %>
+  <%#= f.error_messages %>
+  <%= error_messages_for 'status_changes', :object => @enrolment.status_changes %>
+
+  <% f.fields_for :status_changes do |ef| %>
+  <p>
+    <%= ef.label :new_start_date %><br />
+    <%= ef.date_select :effective_date %>
+  </p>
+  <p>
+    <%= ef.label :approved_date %><br />
+    <%= ef.date_select :approved_date %>
+  </p>
+  <% end %>
+  <p>
+    <%= f.submit 'Defer' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', student_path(@enrolment.student) %>

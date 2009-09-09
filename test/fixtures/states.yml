@@ -1,0 +1,14 @@
+preenrolled:
+  code: PRE
+  level: 1
+  name: Preenrolled
+enrolled:
+  code: ENR
+  level: 2
+completed:
+  code: COM
+  level: 3
+  name: Completed
+deferred:
+  code: DEF
+  level: 2

@@ -1,0 +1,16 @@
+<%= f.error_messages %>
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :dob %><br />
+  <%= f.date_select :dob, :include_blank => true %>
+</p>
+<% f.fields_for :current_enrolment do |ef| %>
+<p>
+  <%= ef.label :start_date %><br />
+  <%= ef.date_select :start_date, :include_blank => true %>
+</p>
+<% end %>
+<%= @student.current_enrolment_state.name %>
